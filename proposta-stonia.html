@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Estratégica para Stonia Ice | Dias Studio Creative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8A2BE2;
+            --secondary-color: #FF69B4;
+            --accent-color: #FFD700;
+            --dark-color: #1a1a1a;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #2d2d2d 100%);
+            color: var(--white-color);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="10" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="10" cy="60" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="90" cy="40" r="1" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 4em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--white-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.3em;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Recognition Card */
+        .recognition {
+            background: var(--white-color);
+            border-radius: 20px;
+            padding: 50px;
+            margin: -60px auto 0;
+            max-width: 900px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .recognition-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 2em;
+        }
+
+        .recognition h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .recognition p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.3em;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Proposal Cards Grid */
+        .proposal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .proposal-card {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proposal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .proposal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--white-color);
+            font-size: 1.8em;
+        }
+
+        .proposal-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .proposal-card p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--dark-color);
+            color: var(--white-color);
+            border-radius: 30px;
+            margin: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            border-radius: 0 30px 30px 0;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .about a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .about a:hover {
+            color: var(--accent-color);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white-color);
+            color: var(--primary-color);
+            padding: 18px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+            
+            .hero-subtitle,
+            .hero-description {
+                font-size: 1.1em;
+            }
+            
+            .recognition {
+                padding: 30px;
+                margin: -40px 20px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2.2em;
+            }
+            
+            .proposal-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .proposal-card {
+                padding: 30px;
+            }
+            
+            .about {
+                margin: 0 10px;
+            }
+            
+            .cta h2 {
+                font-size: 2.2em;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .proposal-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .proposal-card:nth-child(1) { animation-delay: 0.1s; }
+        .proposal-card:nth-child(2) { animation-delay: 0.2s; }
+        .proposal-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Uma proposta de parceria para</p>
+                <h1 class="hero-title">Stonia Ice</h1>
+                <p class="hero-description">Transformando sua vitrine digital em uma comunidade apaixonada pela marca</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <div class="container">
+        <section class="recognition">
+            <div class="recognition-icon">🎯</div>
+            <h2>Parabéns pelo trabalho incrível!</h2>
+            <p>A qualidade visual do perfil @stoniaice é impecável e o cuidado com a marca é evidente. Vocês já dominam o mais difícil: ter um produto excepcional e apresentá-lo de forma irresistível. Nossa proposta é potencializar ainda mais esse sucesso.</p>
+        </section>
+    </div>
+
+    <!-- Main Proposal Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nossa Visão Estratégica</h2>
+            <p class="section-subtitle">Identificamos 3 oportunidades para aprofundar a conexão com seu público, transformando clientes em verdadeiros fãs e embaixadores da marca Stonia Ice.</p>
+            
+            <div class="proposal-grid">
+                <div class="proposal-card">
+                    <div class="card-icon">📖</div>
+                    <h3>Storytelling que Conecta</h3>
+                    <p>As fotos vendem, mas as histórias criam lealdade. Vamos mostrar os bastidores da Stonia: o processo artesanal de criação dos sabores, a paixão da equipe e a história por trás de cada gelato. Isso humaniza a marca e cria uma conexão emocional duradoura com seus clientes.</p>
+                </div>
+                
+                <div class="proposal-card">
+                    <div class="card-icon">🎬</div>
+                    <h3>Domínio dos Reels</h3>
+                    <p>Vídeos curtos são o motor de crescimento do Instagram. Criaremos uma estratégia de Reels com alto potencial viral: ASMR da montagem de pedidos, desafios com a equipe, tendências adaptadas ao universo Stonia. O objetivo é aumentar drasticamente o alcance e atrair novos públicos.</p>
+                </div>
+                
+                <div class="proposal-card">
+                    <div class="card-icon">👥</div>
+                    <h3>Comunidade Ativa</h3>
+                    <p>Transformaremos seus seguidores em embaixadores. Desenvolveremos campanhas para incentivar e destacar o conteúdo gerado pelos clientes (UGC), construindo uma prova social autêntica e uma comunidade forte e engajada ao redor da marca Stonia Ice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-logo">DSC</div>
+                <h2 class="section-title">Dias Studio Creative</h2>
+                <p>Somos uma agência criativa especializada em construir marcas fortes no ambiente digital. Acreditamos que estratégia e conteúdo de qualidade são a chave para criar conexões verdadeiras entre marcas e pessoas.<br><br>Conheça nosso trabalho em <a href="https://www.instagram.com/diasstudiocreative/" target="_blank">@diasstudiocreative</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Vamos conversar?</h2>
+                <p>Adoraríamos apresentar essas ideias em mais detalhes e explorar como podemos crescer juntos.</p>
+                <p>Agende uma chamada de 15 minutos, sem compromisso.</p>
+                <a href="#" class="cta-button" onclick="alert('Substitua este link pelo seu Calendly, WhatsApp ou e-mail de contato!')">Agendar uma Conversa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Esta proposta foi preparada com carinho pela <strong>Dias Studio Creative</strong> para a Stonia Ice.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.proposal-card, .recognition, .about').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
