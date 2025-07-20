@@ -1,0 +1,335 @@
+.proposal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.proposal-modal-content {
+  background: var(--white-color);
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.proposal-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--light-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal-modal-close:hover {
+  opacity: 1;
+  background: var(--primary-color);
+  color: var(--white-color);
+  transform: rotate(90deg);
+}
+
+.proposal-modal-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.proposal-modal-header-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  font-size: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.proposal-modal-header h2 {
+  color: var(--dark-color);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.proposal-modal-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.proposal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.proposal-intro {
+  background: var(--light-color);
+  padding: 24px;
+  border-radius: 16px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.proposal-intro p {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 500;
+}
+
+.proposal-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.proposal-section {
+  background: var(--white-color);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proposal-section:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.proposal-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.proposal-section-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  flex-shrink: 0;
+}
+
+.proposal-section-header h3 {
+  color: var(--dark-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.proposal-section p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.proposal-cta {
+  text-align: center;
+  background: var(--gradient-primary);
+  padding: 32px;
+  border-radius: 16px;
+  color: var(--white-color);
+}
+
+.proposal-cta p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.proposal-whatsapp-button {
+  background: #25D366;
+  color: var(--white-color);
+  padding: 18px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  box-shadow: var(--shadow-lg);
+  margin: 0 auto;
+}
+
+.proposal-whatsapp-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  background: #128C7E;
+}
+
+.proposal-whatsapp-button:active {
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .proposal-modal-content {
+    padding: 32px 24px;
+    margin: 10px;
+  }
+
+  .proposal-modal-close {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .proposal-modal-header-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .proposal-modal-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .proposal-modal-header p {
+    font-size: 1rem;
+  }
+
+  .proposal-content {
+    gap: 24px;
+  }
+
+  .proposal-intro {
+    padding: 20px;
+  }
+
+  .proposal-intro p {
+    font-size: 1rem;
+  }
+
+  .proposal-section {
+    padding: 20px;
+  }
+
+  .proposal-section-header {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .proposal-section-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .proposal-section-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .proposal-cta {
+    padding: 24px;
+  }
+
+  .proposal-cta p {
+    font-size: 1.1rem;
+  }
+
+  .proposal-whatsapp-button {
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .proposal-modal-overlay {
+    padding: 10px;
+  }
+
+  .proposal-modal-content {
+    padding: 24px 20px;
+  }
+
+  .proposal-modal-header-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .proposal-modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .proposal-section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .proposal-section-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .proposal-section-header h3 {
+    font-size: 1rem;
+  }
+} 
